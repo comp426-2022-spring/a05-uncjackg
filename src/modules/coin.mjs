@@ -63,7 +63,7 @@ function countFlips(array) {
   let heads = 0;
   let tails = 0;
   for (let i=0; i<array.length; i++) {
-    if (array[i] == 'heads') {
+    if (array[i] == '\"heads\"') {
       heads++;
     } else {
       tails++;
