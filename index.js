@@ -1,6 +1,6 @@
 import { coinFlip, coinFlips, countFlips, flipACoin } from './modules/coin.mjs';
 import minimist from 'minimist';
-import db from './database.js';
+import db from './src/services/database.js';
 import express from 'express';
 import morgan from 'morgan';
 import fs from 'fs';
@@ -45,6 +45,9 @@ const app = express();
 const server = app.listen(HTTP_PORT, () => {
   console.log(`App listening on port ${HTTP_PORT}`);
 });
+
+// Serve static HTML files
+app.use(express.static('./public'));
 
 if (args.log && args.log != 'false') {
   // Use morgan for logging to files
