@@ -2,7 +2,7 @@
 
 import Database from 'better-sqlite3';
 
-const db = new Database('log.db');
+const db = new Database('./data/log/log.db');
 
 // Is the database initialized or do we need to initialize it?
 const stmt = db.prepare(`
