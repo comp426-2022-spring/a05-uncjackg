@@ -52,7 +52,7 @@ app.use(express.static('./public'));
 if (args.log && args.log != 'false') {
   // Use morgan for logging to files
   // Create a write stream to append (flags: 'a') to a file
-  const WRITESTREAM = fs.createWriteStream('access.log', { flags: 'a' })
+  const WRITESTREAM = fs.createWriteStream('./data/log/access.log', { flags: 'a' })
   // Set up the access logging middleware
   app.use(morgan('combined', { stream: WRITESTREAM }))
 }
