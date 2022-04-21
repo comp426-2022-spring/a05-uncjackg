@@ -1,6 +1,6 @@
-import { coinFlip, coinFlips, countFlips, flipACoin } from './modules/coin.mjs';
-import minimist from 'minimist';
+import { coinFlip, coinFlips, countFlips, flipACoin } from './src/modules/coin.mjs';
 import db from './src/services/database.js';
+import minimist from 'minimist';
 import express from 'express';
 import morgan from 'morgan';
 import fs from 'fs';
