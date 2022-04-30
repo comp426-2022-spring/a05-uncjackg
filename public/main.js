@@ -1,3 +1,37 @@
+// oneFlip button
+const oneFlip = document.getElementById("oneFlip");
+oneFlip.addEventListener("click", flipOneCoin);
+
+async function flipOneCoin() {
+  console.log("flipping one coin")
+  const url = document.baseURI + "app/flip/";
+  await fetch(url).then(function(res) {
+    return res.json();
+  }).then(function(result) {
+    // display result on the flip page
+    document.getElementById("flipResult").innerHTML = result.flip;
+    document.getElementById("quarter").setAttribute("src", "assets/img/" + result.flip+".png");
+  });
+}
+
+// manyFlips button
+const numCoins = document.getElementById("numcoins");
+const manyFlips = document.getElementById("manyFlips");
+manyFlips.addEventListener("click", flipManyCoins);
+
+async function flipManyCoins() {
+  const num = numCoins.value || 1;
+  const url = document.baseURI + "app/flips/" + num + "/";
+  await fetch(url).then(function(res) {
+    return res.json();
+  }).then(function(result) {
+    // display results on the flip page
+    document.getElementById("flipResults").innerHTML = result.raw;
+    document.getElementById("headsCount").innerHTML = result.summary.heads;
+    document.getElementById("tailsCount").innerHTML = result.summary.tails;
+  });
+}
+
 // Navigation click functions
 function homeNavClick() {
   document.getElementById("homenav").className = "active";

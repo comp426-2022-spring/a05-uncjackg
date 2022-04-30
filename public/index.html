@@ -33,23 +33,41 @@
       <button id="multinav" onclick="multiNavClick()">Flip multiple coins</button>
       <button id="guessnav" onclick="guessNavClick()">Guess the result</button>
     </nav>
+
     <div id="home" class="active">
-      <h2>Welcome to the coin flipping game</h2>
+      <h2>Welcome to the coin flipping game.</h2>
       <p>
         On this site, you can flip a coin using the flip one coin tab, flip multiple coins at once using the 
         flip multiple coins tab, or guess the result of a flip and see if you were right or wrong using the 
         guess the result tab. Happy flipping!
       </p>
     </div>
+
     <div id="single" class="inactive">
-      <h2>Flilp a coin.</h2>
-      <button>Flip me</button>
+      <h2>Flip a coin.</h2>
+      <button id="oneFlip">Flip it</button>
+      <h3>Result:</h3>
+      <span id="flipResult"></span>
+      <img src="assets/img/coin.png" id="quarter" class="bigcoin">
     </div>
+
     <div id="multi" class="inactive">
-      
+      <h2>Flip many coins.</h2>
+      <span>Enter how many coins:</span>
+      <input id="numcoins" placeholder="#">
+      <button id="manyFlips">Flip them all</button>
+      <div>
+        <span><h3>Results:</h3></span>
+        <span id="flipResults"></span>
+      </div>
+      <span>Heads:</span>
+      <span id="headsCount"></span>
+      <span>Tails:</span>
+      <span id="tailsCount"></span>
     </div>
+
     <div id="guess" class="inactive">
-      
+      <h2>Guess the result of the flip.</h2>
     </div>
 	<script src="main.js"></script>
   </body>
