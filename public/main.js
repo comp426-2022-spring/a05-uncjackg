@@ -38,7 +38,7 @@ const guessFlip = document.getElementById("guessFlip");
 guessFlip.addEventListener("click", flipWithGuess);
 
 async function flipWithGuess() {
-  const guess = guess.value;
+  const guess = guess.value || '';
   if (guess != "heads" && guess != "tails") {
     document.getElementById("finalGuess").innerHTML = "please enter heads or tails as your guess";
   } else {
