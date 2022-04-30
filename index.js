@@ -50,6 +50,10 @@ const server = app.listen(HTTP_PORT, () => {
 app.use(express.static('./public'));
 
 if (args.log && args.log != 'false') {
+  if (!fs.existsSync('./data/log')) {
+    fs.mkdirSync('./data/log');
+  }
+
   // Use morgan for logging to files
   // Create a write stream to append (flags: 'a') to a file
   const WRITESTREAM = fs.createWriteStream('./data/log/access.log', { flags: 'a' })

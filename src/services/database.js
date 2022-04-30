@@ -1,6 +1,11 @@
 "use strict"
 
 import Database from 'better-sqlite3';
+import fs from 'fs';
+
+if (!fs.existsSync('./data')) {
+    fs.mkdirSync('./data');
+}
 
 const db = new Database('./data/log.db');
 
