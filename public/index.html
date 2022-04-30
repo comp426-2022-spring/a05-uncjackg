@@ -28,12 +28,12 @@
   <body>
     <nav>
       <span>Nav:</span>
-      <button id="homenav">Home</button>
-      <button id="singlenav">Flip one coin</button>
-      <button id="multinav">Flip multiple coins</button>
-      <button id="guessnav">Guess the result</button>
+      <button id="homenav" onclick="homeNavClick()">Home</button>
+      <button id="singlenav" onclick="singleNavClick()">Flip one coin</button>
+      <button id="multinav" onclick="multiNavClick()">Flip multiple coins</button>
+      <button id="guessnav" onclick="guessNavClick()">Guess the result</button>
     </nav>
-    <div id="home">
+    <div id="home" class="active">
       <h2>Welcome to the coin flipping game</h2>
       <p>
         On this site, you can flip a coin using the flip one coin tab, flip multiple coins at once using the 
@@ -41,13 +41,14 @@
         guess the result tab. Happy flipping!
       </p>
     </div>
-    <div id="single" class="hidden">
-
+    <div id="single" class="inactive">
+      <h2>Flilp a coin.</h2>
+      <button>Flip me</button>
     </div>
-    <div id="multi" class="hidden">
+    <div id="multi" class="inactive">
       
     </div>
-    <div id="guess" class="hidden">
+    <div id="guess" class="inactive">
       
     </div>
 	<script src="main.js"></script>

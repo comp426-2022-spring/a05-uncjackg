@@ -1,8 +1,44 @@
-// Focus div based on nav button click
+// Navigation click functions
+function homeNavClick() {
+  document.getElementById("homenav").className = "active";
+  document.getElementById("home").className = "active";
+  document.getElementById("singlenav").className = "";
+  document.getElementById("single").className = "inactive";
+  document.getElementById("multinav").className = "";
+  document.getElementById("multi").className = "inactive";
+  document.getElementById("guessnav").className = "";
+  document.getElementById("guess").className = "inactive";
+}
 
-// Flip one coin and show coin image to match result when button clicked
+function singleNavClick() {
+  document.getElementById("homenav").className = "";
+  document.getElementById("home").className = "inactive";
+  document.getElementById("singlenav").className = "active";
+  document.getElementById("single").className = "active";
+  document.getElementById("multinav").className = "";
+  document.getElementById("multi").className = "inactive";
+  document.getElementById("guessnav").className = "";
+  document.getElementById("guess").className = "inactive";
+}
 
-// Flip multiple coins and show coin images in table as well as summary results
-// Enter number and press button to activate coin flip series
+function multiNavClick() {
+  document.getElementById("homenav").className = "";
+  document.getElementById("home").className = "inactive";
+  document.getElementById("singlenav").className = "";
+  document.getElementById("single").className = "inactive";
+  document.getElementById("multinav").className = "active";
+  document.getElementById("multi").className = "active";
+  document.getElementById("guessnav").className = "";
+  document.getElementById("guess").className = "inactive";
+}
 
-// Guess a flip by clicking either heads or tails button
+function guessNavClick() {
+  document.getElementById("homenav").className = "";
+  document.getElementById("home").className = "inactive";
+  document.getElementById("singlenav").className = "";
+  document.getElementById("single").className = "inactive";
+  document.getElementById("multinav").className = "";
+  document.getElementById("multi").className = "inactive";
+  document.getElementById("guessnav").className = "active";
+  document.getElementById("guess").className = "active";
+}
