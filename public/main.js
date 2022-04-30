@@ -32,6 +32,27 @@ async function flipManyCoins() {
   });
 }
 
+// guessFlip button
+const guess = document.getElementById("myGuess");
+const guessFlip = document.getElementById("guessFlip");
+guessFlip.addEventListener("click", flipWithGuess);
+
+async function flipWithGuess() {
+  const guess = guess.value;
+  if (guess != "heads" && guess != "tails") {
+    document.getElementById("finalGuess").innerHTML = "please enter heads or tails as your guess";
+  } else {
+    const url = document.baseURI + "app/flip/call/" + guess; + "/";
+    await fetch(url).then(function(res) {
+      return res.json();
+    }).then(function(result) {
+      document.getElementById("flipResults").innerHTML = result;
+      document.getElementById("finalGuess").innerHTML = result.call;
+      document.getElementById("win").innerHTML = result.result;
+    });
+  }
+}
+
 // Navigation click functions
 function homeNavClick() {
   document.getElementById("homenav").className = "active";
